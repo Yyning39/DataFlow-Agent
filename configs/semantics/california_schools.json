@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "datasource": "california_schools",
+  "fields": [
+    {
+      "table": "schools",
+      "column": "Virtual",
+      "description": "学校的虚拟属性编码，必须按数据源定义解释",
+      "aliases": ["exclusively virtual", "virtual school", "虚拟学校"],
+      "value_mapping": {
+        "exclusively virtual": "F",
+        "virtual school": "F",
+        "虚拟学校": "F"
+      },
+      "source": "BIRD Mini-Dev official gold semantics",
+      "confidence": 1.0,
+      "notes": "Y/F are opaque source codes; do not infer their meaning from the letters."
+    }
+  ]
+}

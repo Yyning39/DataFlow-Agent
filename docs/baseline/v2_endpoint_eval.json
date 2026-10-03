@@ -1,0 +1,113 @@
+{
+  "model": "deepseek-v4-flash",
+  "results": [
+    {
+      "id": "B01",
+      "question": "How many rows are in the Walmart sales table?",
+      "seconds": 8.35,
+      "sql": "SELECT COUNT(*) AS row_count FROM walmart_sales;",
+      "data": [
+        {
+          "row_count": 6435
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    },
+    {
+      "id": "B02",
+      "question": "What is the total Weekly_Sales?",
+      "seconds": 6.98,
+      "sql": null,
+      "data": [],
+      "sql_generated": false,
+      "execution_success": false,
+      "result_correct": false,
+      "error": null
+    },
+    {
+      "id": "B03",
+      "question": "What is the average Weekly_Sales?",
+      "seconds": 15.33,
+      "sql": "SELECT AVG(Weekly_Sales) AS average_weekly_sales FROM walmart_sales;",
+      "data": [
+        {
+          "average_weekly_sales": 1046964.8775617715
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    },
+    {
+      "id": "B04",
+      "question": "How many stores are in the dataset?",
+      "seconds": 38.69,
+      "sql": "SELECT COUNT(DISTINCT Store) AS store_count FROM walmart_sales;",
+      "data": [
+        {
+          "store_count": 45
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    },
+    {
+      "id": "B05",
+      "question": "Which store has the highest total Weekly_Sales?",
+      "seconds": 18.14,
+      "sql": "SELECT Store, SUM(Weekly_Sales) AS Total_Weekly_Sales FROM walmart_sales GROUP BY Store ORDER BY Total_Weekly_Sales DESC LIMIT 1;",
+      "data": [
+        {
+          "Store": 20,
+          "Total_Weekly_Sales": 301397792.46
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    },
+    {
+      "id": "B06",
+      "question": "What are the total Weekly_Sales for holidays versus non-holidays?",
+      "seconds": 37.17,
+      "sql": "SELECT CASE WHEN Holiday_Flag = 1 THEN 'Holiday' ELSE 'Non-holiday' END AS period_type, SUM(Weekly_Sales) AS total_weekly_sales FROM walmart_sales GROUP BY CASE WHEN Holiday_Flag = 1 THEN 'Holiday' ELSE 'Non-holiday' END ORDER BY period_type;",
+      "data": [
+        {
+          "period_type": "Holiday",
+          "total_weekly_sales": 505299551.56
+        },
+        {
+          "period_type": "Non-holiday",
+          "total_weekly_sales": 6231919435.55
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    },
+    {
+      "id": "B07",
+      "question": "What is the date range in the dataset?",
+      "seconds": 8.68,
+      "sql": "SELECT MIN(Date) AS min_date, MAX(Date) AS max_date FROM walmart_sales;",
+      "data": [
+        {
+          "min_date": "01-04-2011",
+          "max_date": "31-12-2010"
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    }
+  ]
+}

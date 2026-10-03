@@ -1,0 +1,46 @@
+{
+  "benchmark": "BIRD Mini-Dev SQLite",
+  "model": "deepseek-v4-flash",
+  "run_id": "v2_value_hints_smoke_20260826",
+  "manifest": "docs\\baseline\\bird_mini_dev_eval_manifest_1.json",
+  "results": [
+    {
+      "question_id": 5,
+      "db_id": "california_schools",
+      "question": "How many schools with an average score in Math greater than 400 in the SAT test are exclusively virtual?",
+      "gold_sql": "SELECT COUNT(DISTINCT T2.School) FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.Virtual = 'F' AND T1.AvgScrMath > 400",
+      "sql": "SELECT COUNT(DISTINCT s.CDSCode) AS school_count FROM schools s JOIN satscores sc ON s.CDSCode = sc.cds WHERE sc.AvgScrMath > 400 AND s.Virtual = 'Y';",
+      "seconds": 79.8,
+      "schema_seconds": 1.2162,
+      "schema_table_count": 3.0,
+      "schema_fallback_used": 1.0,
+      "value_hint_seconds": 0.0005,
+      "value_hint_table_count": 0.0,
+      "value_hint_column_count": 0.0,
+      "sql_value_warning_count": 0.0,
+      "model_generation_seconds": 78.1047,
+      "model_first_token_seconds": 3.4343,
+      "sql_execution_seconds": 0.028,
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": false,
+      "error": null
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "sql_conversion_rate": 1.0,
+    "execution_success_rate": 1.0,
+    "result_correctness": 0.0,
+    "average_latency": 79.8,
+    "average_schema_seconds": 1.2162,
+    "schema_fallback_rate": 1.0,
+    "average_value_hint_seconds": 0.0005,
+    "average_value_hint_table_count": 0.0,
+    "average_value_hint_column_count": 0.0,
+    "average_sql_value_warning_count": 0.0,
+    "average_model_generation_seconds": 78.1047,
+    "average_model_first_token_seconds": 3.4343,
+    "average_sql_execution_seconds": 0.028
+  }
+}

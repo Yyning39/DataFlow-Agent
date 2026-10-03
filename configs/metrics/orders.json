@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "datasource": "orders",
+  "metrics": [
+    {
+      "name": "Total Revenue",
+      "description": "Revenue across selected orders",
+      "expression": "SUM(revenue)",
+      "table": "orders",
+      "dimensions": ["region", "order_date"],
+      "aliases": ["total revenue", "revenue total", "收入总额"]
+    },
+    {
+      "name": "Average Order Value",
+      "description": "Average monetary value per order",
+      "expression": "AVG(order_amount)",
+      "table": "orders",
+      "dimensions": ["region", "order_date"],
+      "aliases": ["average order value", "客单价"]
+    },
+    {
+      "name": "Order Count",
+      "description": "Number of distinct orders",
+      "expression": "COUNT(DISTINCT order_id)",
+      "table": "orders",
+      "dimensions": ["region", "order_date"],
+      "aliases": ["number of orders", "distinct orders", "订单数量"]
+    }
+  ]
+}

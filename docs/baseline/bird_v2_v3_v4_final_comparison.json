@@ -1,0 +1,78 @@
+{
+  "compatible": true,
+  "models": [
+    "deepseek-v4-flash"
+  ],
+  "manifests": [
+    "docs\\baseline\\bird_mini_dev_eval_manifest.json"
+  ],
+  "experiment_contracts": {
+    "v2": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "temperature": 0.0,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    },
+    "v3": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "temperature": 0.0,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    },
+    "v4": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "temperature": 0.0,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    }
+  },
+  "contract_differences": {},
+  "versions": [
+    {
+      "version": "v2",
+      "sql_conversion_rate": 0.8181818181818182,
+      "execution_success_rate": 0.8181818181818182,
+      "result_correctness": 0.45454545454545453,
+      "average_latency": 6.379545454545456,
+      "p50_latency": 7.03,
+      "p95_latency": 8.6645,
+      "average_model_generation_seconds": 6.2468,
+      "p95_model_generation_seconds": 7.6459,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    },
+    {
+      "version": "v3",
+      "sql_conversion_rate": 0.8636363636363636,
+      "execution_success_rate": 0.8636363636363636,
+      "result_correctness": 0.36363636363636365,
+      "average_latency": 6.66090909090909,
+      "p50_latency": 6.635,
+      "p95_latency": 13.844,
+      "average_model_generation_seconds": 6.8274,
+      "p95_model_generation_seconds": 13.6157,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    },
+    {
+      "version": "v4",
+      "sql_conversion_rate": 0.9090909090909091,
+      "execution_success_rate": 0.9090909090909091,
+      "result_correctness": 0.36363636363636365,
+      "average_latency": 7.7209090909090925,
+      "p50_latency": 6.955,
+      "p95_latency": 11.854,
+      "average_model_generation_seconds": 8.0995,
+      "p95_model_generation_seconds": 12.4247,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    }
+  ],
+  "warning": null
+}

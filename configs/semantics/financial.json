@@ -1,0 +1,59 @@
+{
+  "metrics": [
+    {
+      "name": "Female average salary",
+      "description": "BIRD financial benchmark stores the female average salary in district.A11",
+      "expression": "district.A11",
+      "table": "district",
+      "dimensions": ["district_id", "A2"],
+      "aliases": ["female average salary", "female salary", "女性平均工资"],
+      "notes": "Use A11 for the benchmark's female average salary wording; do not substitute client.A11."
+    }
+  ],
+  "fields": [
+    {
+      "table": "district",
+      "column": "A11",
+      "description": "Female average salary in the BIRD financial benchmark",
+      "aliases": ["female average salary", "female salary", "女性平均工资"],
+      "value_mapping": {"female average salary": "A11"},
+      "source": "BIRD Mini-Dev evidence",
+      "confidence": 0.95,
+      "notes": "The benchmark evidence defines A11 as the female average salary field."
+    },
+    {
+      "table": "client",
+      "column": "gender",
+      "description": "Client gender",
+      "aliases": ["sex", "性别"],
+      "value_mapping": {"female": "F", "女性": "F", "male": "M", "男性": "M"},
+      "source": "BIRD Mini-Dev schema",
+      "confidence": 0.9
+    },
+    {
+      "table": "district",
+      "column": "A3",
+      "description": "Region name used for Bohemia area filters",
+      "aliases": ["region", "area", "地区", "区域"],
+      "value_mapping": {
+        "North Bohemia": "north Bohemia",
+        "East Bohemia": "east Bohemia",
+        "South Bohemia": "south Bohemia",
+        "West Bohemia": "west Bohemia"
+      },
+      "source": "BIRD Mini-Dev evidence",
+      "confidence": 0.95,
+      "notes": "Use the stored casing shown in the mapping; SQLite equality is case-sensitive."
+    },
+    {
+      "table": "trans",
+      "column": "operation",
+      "description": "Transaction operation code; VYBER denotes cash withdrawal",
+      "aliases": ["cash withdrawal", "cash transaction", "取现", "现金交易"],
+      "value_mapping": {"cash withdrawal": "VYBER", "cash transaction": "VYBER"},
+      "source": "BIRD Mini-Dev evidence",
+      "confidence": 0.9,
+      "notes": "Filter operation for cash withdrawals; do not add trans.type unless the question explicitly names it."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "datasource": "marketing_events",
+  "metrics": [
+    {
+      "name": "Conversion Rate",
+      "description": "Converted events divided by all events",
+      "expression": "SUM(converted) / COUNT(*)",
+      "table": "events",
+      "dimensions": ["campaign", "event_date"],
+      "aliases": ["conversion rate", "转化率"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "model": "deepseek-v4-flash",
+  "results": [
+    {
+      "id": "B02",
+      "question": "What is the total Weekly_Sales?",
+      "seconds": 12.26,
+      "sql": "SELECT SUM(Weekly_Sales) AS Total_Weekly_Sales FROM walmart_sales;",
+      "data": [
+        {
+          "Total_Weekly_Sales": 6737218987.11
+        }
+      ],
+      "sql_generated": true,
+      "execution_success": true,
+      "result_correct": true,
+      "error": null
+    }
+  ]
+}

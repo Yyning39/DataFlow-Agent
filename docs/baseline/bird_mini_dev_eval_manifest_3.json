@@ -1,0 +1,40 @@
+{
+  "source": "BIRD-Mini-Dev SQLite",
+  "source_file": "D:\\1ALL\\DB-GPT\\datasets\\bird_mini_dev\\data\\mini_dev_sqlite.json",
+  "source_sha256": "4ba5fa8de55856222f484d380d2ba872b380bf79d825de70478e2120cb0fc43b",
+  "selection": {
+    "per_db": 1,
+    "database_count": 3,
+    "db_ids": [
+      "california_schools",
+      "formula_1",
+      "superhero"
+    ]
+  },
+  "cases": [
+    {
+      "question_id": 5,
+      "db_id": "california_schools",
+      "question": "How many schools with an average score in Math greater than 400 in the SAT test are exclusively virtual?",
+      "evidence": "Exclusively virtual refers to Virtual = 'F'",
+      "SQL": "SELECT COUNT(DISTINCT T2.School) FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.Virtual = 'F' AND T1.AvgScrMath > 400",
+      "difficulty": "simple"
+    },
+    {
+      "question_id": 847,
+      "db_id": "formula_1",
+      "question": "What is the surname of the driver with the best lap time in race number 19 in the second qualifying period?",
+      "evidence": "race number refers to raceId; second qualifying period refers to q2; best lap time refers to MIN(q2);",
+      "SQL": "SELECT T2.surname FROM qualifying AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId WHERE T1.raceId = 19 ORDER BY T1.q2 ASC LIMIT 1",
+      "difficulty": "simple"
+    },
+    {
+      "question_id": 717,
+      "db_id": "superhero",
+      "question": "Please list all the superpowers of 3-D Man.",
+      "evidence": "3-D Man refers to superhero_name = '3-D Man'; superpowers refers to power_name",
+      "SQL": "SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = '3-D Man'",
+      "difficulty": "simple"
+    }
+  ]
+}

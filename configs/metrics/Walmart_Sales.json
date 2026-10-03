@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "datasource": "Walmart_Sales",
+  "metrics": [
+    {
+      "name": "Total Weekly Sales",
+      "description": "Total sales across the selected records",
+      "expression": "SUM(Weekly_Sales)",
+      "table": "walmart_sales",
+      "dimensions": ["Store", "Date", "Holiday_Flag"],
+      "aliases": ["Weekly_Sales total", "total sales", "sales total", "销售额", "总销售额"],
+      "notes": "Do not use AVG when the question asks for total sales."
+    },
+    {
+      "name": "Average Weekly Sales",
+      "description": "Mean Weekly_Sales value per record",
+      "expression": "AVG(Weekly_Sales)",
+      "table": "walmart_sales",
+      "dimensions": ["Store", "Date", "Holiday_Flag"],
+      "aliases": ["average sales", "平均销售额", "平均销售"]
+    },
+    {
+      "name": "Store Count",
+      "description": "Number of distinct stores",
+      "expression": "COUNT(DISTINCT Store)",
+      "table": "walmart_sales",
+      "dimensions": ["Store"],
+      "aliases": ["number of stores", "门店数", "门店数量"]
+    }
+  ]
+}

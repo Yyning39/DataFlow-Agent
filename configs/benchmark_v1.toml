@@ -1,0 +1,30 @@
+[system]
+language = "zh"
+api_keys = []
+encrypt_key = "benchmark_v1_secret"
+
+[service.web]
+host = "0.0.0.0"
+port = 5672
+
+[service.web.database]
+type = "sqlite"
+path = "D:/1ALL/DB-GPT/versions/runtime/v1/metadata.db"
+
+[rag.storage]
+[rag.storage.vector]
+type = "chroma"
+persist_path = "D:/1ALL/DB-GPT/versions/runtime/v1/vector"
+
+[models]
+[[models.llms]]
+name = "deepseek-v4-flash"
+provider = "proxy/openai"
+api_base = "http://127.0.0.1:5699/v1"
+api_key = "local-benchmark-proxy"
+
+[[models.embeddings]]
+name = "text-embedding-3-small"
+provider = "proxy/openai"
+api_url = "http://127.0.0.1:5699/v1/embeddings"
+api_key = "local-benchmark-proxy"

@@ -1,0 +1,75 @@
+{
+  "compatible": true,
+  "models": [
+    "deepseek-v4-flash"
+  ],
+  "manifests": [
+    "docs\\baseline\\bird_mini_dev_eval_manifest.json"
+  ],
+  "experiment_contracts": {
+    "v2": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    },
+    "v3": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    },
+    "v4": {
+      "model": "deepseek-v4-flash",
+      "manifest_sha256": "5b786fa35e0ccd1d54046ba7ab0b9228e461fe689f7bf0e9e110f6c5ad4be99f",
+      "case_timeout": 120,
+      "provider": "proxy/deepseek",
+      "api_base": "https://api.deepseek.com/v1"
+    }
+  },
+  "contract_differences": {},
+  "versions": [
+    {
+      "version": "v2",
+      "sql_conversion_rate": 0.8636363636363636,
+      "execution_success_rate": 0.8636363636363636,
+      "result_correctness": 0.45454545454545453,
+      "average_latency": 6.742727272727274,
+      "p50_latency": 5.425,
+      "p95_latency": 13.661,
+      "average_model_generation_seconds": 6.3118,
+      "p95_model_generation_seconds": 10.8186,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    },
+    {
+      "version": "v3",
+      "sql_conversion_rate": 0.9090909090909091,
+      "execution_success_rate": 0.9090909090909091,
+      "result_correctness": 0.45454545454545453,
+      "average_latency": 7.093636363636364,
+      "p50_latency": 6.55,
+      "p95_latency": 12.361,
+      "average_model_generation_seconds": 6.9621,
+      "p95_model_generation_seconds": 11.6975,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    },
+    {
+      "version": "v4",
+      "sql_conversion_rate": 0.8636363636363636,
+      "execution_success_rate": 0.8636363636363636,
+      "result_correctness": 0.36363636363636365,
+      "average_latency": 6.351363636363636,
+      "p50_latency": 6.37,
+      "p95_latency": 9.794,
+      "average_model_generation_seconds": 6.4373,
+      "p95_model_generation_seconds": 9.4422,
+      "model_timeout_rate": 0.0,
+      "runtime_configuration_mismatch_rate": 0.0
+    }
+  ],
+  "warning": null
+}
